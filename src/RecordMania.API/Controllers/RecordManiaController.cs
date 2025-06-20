@@ -1,6 +1,33 @@
-namespace RecordMania.API.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using RecordMania.Application;
+using RecordMania.Model;
 
-public class RecordManiaController
-{
+namespace RecordMania.API.Controllers;
+[ApiController]
+[Route("api/records")]
+public class RecordManiaController : ControllerBase
+{ 
+    private readonly RecordManiaManager _recordManiaManager;
     
+    public RecordManiaController(RecordManiaManager recordManiaManager)
+    {
+        _recordManiaManager = recordManiaManager;
+    }
+    [HttpGet]
+    public IActionResult GetAllRecords()
+    {
+        var records = _recordManiaManager.GetAllRecords();
+        return Ok(records);
+    }
+    [HttpPost]
+    public IActionResult AddRecord([FromBody] Records record)
+    {
+        if (record == null)
+        {
+            return BadRequest("Record data is required.");
+        }
+        
+        _recordManiaManager.AddRecord(record);
+        return CreatedAtAction(nameof(GetAllRecords), new { id = record.Id }, record);
+    }
 }

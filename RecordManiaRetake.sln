@@ -1,8 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordMania.API", "src\RecordMania.API\RecordMania.API.csproj", "{B2783424-CEAC-4C9A-A96A-C27BFC68B567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordMania.Repository", "src\RecordMania.Repository\RecordMania.Repository.csproj", "{3BE93430-46B1-44A2-826F-7EDBC5C7EF97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordMania.Model", "src\RecordMania.Model\RecordMania.Model.csproj", "{985360EE-5DF6-4EA4-A528-52CDEC1C0F64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecordMania.Application", "src\RecordMania.Application\RecordMania.Application.csproj", "{A03C9CE4-A820-4904-994E-4AC0B22F9140}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2783424-CEAC-4C9A-A96A-C27BFC68B567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2783424-CEAC-4C9A-A96A-C27BFC68B567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2783424-CEAC-4C9A-A96A-C27BFC68B567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2783424-CEAC-4C9A-A96A-C27BFC68B567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BE93430-46B1-44A2-826F-7EDBC5C7EF97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BE93430-46B1-44A2-826F-7EDBC5C7EF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BE93430-46B1-44A2-826F-7EDBC5C7EF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BE93430-46B1-44A2-826F-7EDBC5C7EF97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{985360EE-5DF6-4EA4-A528-52CDEC1C0F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{985360EE-5DF6-4EA4-A528-52CDEC1C0F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{985360EE-5DF6-4EA4-A528-52CDEC1C0F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{985360EE-5DF6-4EA4-A528-52CDEC1C0F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03C9CE4-A820-4904-994E-4AC0B22F9140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03C9CE4-A820-4904-994E-4AC0B22F9140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03C9CE4-A820-4904-994E-4AC0B22F9140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03C9CE4-A820-4904-994E-4AC0B22F9140}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
