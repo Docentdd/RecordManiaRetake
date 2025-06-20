@@ -1,0 +1,6 @@
+@RecordMania.API_HostAddress = http://localhost:5089
+
+GET {{RecordMania.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
