@@ -62,6 +62,31 @@ public class RecordManiaRepository : IRecordManiaRepository
         connection.Open();
         command.ExecuteNonQuery();
     }
+    public List<Records> GetAllRecordsWithDetails()
+    {
+        List<Records> records = new List<Records>();
+        using var connection = new SqlConnection(_connectionString);
+        connection.Open();
+        
+        var command = new SqlCommand("SELECT * FROM Records JOIN TEACHER ON TeacherId = Teacher.Id JOIN Task on TaskId = Task.Id JOIN RecordType On RecordTypeId = RecordType.Id )", connection);
+        
+        using var reader = command.ExecuteReader();
+
+        while (reader.Read())
+        {
+            records.Add(new Records
+            {
+                Id = reader.GetInt32(0),
+                TeacherId = reader.GetInt32(1),
+                RecordTypeId = reader.GetInt32(2),
+                TaskId = reader.GetInt32(3),
+                ExecutionTime = reader.GetDecimal(4),
+                CreationTime = reader.GetDateTime(5)
+            });
+        }
+
+        return records;
+    }
     
     
 }

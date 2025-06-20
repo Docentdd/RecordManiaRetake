@@ -23,5 +23,9 @@ public class RecordManiaManager
     {
         _repository.AddRecordFirs(record);
     }
+    public List<Records> GetAllRecordsWithDetails()
+    {
+        return _repository.GetAllRecordsWithDetails();
+    }
     
 }

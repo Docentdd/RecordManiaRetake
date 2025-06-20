@@ -41,4 +41,10 @@ public class RecordManiaController : ControllerBase
         _recordManiaManager.AddRecordFirst(record);
         return CreatedAtAction(nameof(GetAllRecords), new { id = record.Id }, record);
     }
+    [HttpGet("details")]
+    public IActionResult GetAllRecordsWithDetails()
+    {
+        var records = _recordManiaManager.GetAllRecordsWithDetails();
+        return Ok(records);
+    }
 }

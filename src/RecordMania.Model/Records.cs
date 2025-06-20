@@ -9,7 +9,7 @@ public class Records
     public int RecordTypeId { get; set; }
     public Task Task { get; set; }
     public int TaskId { get; set; }
-    public long ExecutionTime { get; set; }
+    public decimal ExecutionTime { get; set; }
     public DateTime CreationTime { get; set; }
     
     
