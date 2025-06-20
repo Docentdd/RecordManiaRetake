@@ -68,7 +68,7 @@ public class RecordManiaRepository : IRecordManiaRepository
         using var connection = new SqlConnection(_connectionString);
         connection.Open();
         
-        var command = new SqlCommand("SELECT * FROM Records JOIN TEACHER ON TeacherId = Teacher.Id JOIN Task on TaskId = Task.Id JOIN RecordType On RecordTypeId = RecordType.Id )", connection);
+        var command = new SqlCommand("SELECT * FROM Records /*JOIN TEACHER ON TeacherId = Teacher.Id JOIN Task on TaskId = Task.Id JOIN RecordType On RecordTypeId = RecordType.Id*/", connection);
         
         using var reader = command.ExecuteReader();
 
