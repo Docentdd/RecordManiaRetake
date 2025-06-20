@@ -30,4 +30,15 @@ public class RecordManiaController : ControllerBase
         _recordManiaManager.AddRecord(record);
         return CreatedAtAction(nameof(GetAllRecords), new { id = record.Id }, record);
     }
+    [HttpPost("first")]
+    public IActionResult AddRecordFirst([FromBody] RecordDTOfrst record)
+    {
+        if (record == null)
+        {
+            return BadRequest("Record data is required.");
+        }
+        
+        _recordManiaManager.AddRecordFirst(record);
+        return CreatedAtAction(nameof(GetAllRecords), new { id = record.Id }, record);
+    }
 }

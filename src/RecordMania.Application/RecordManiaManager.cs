@@ -19,5 +19,9 @@ public class RecordManiaManager
     {
         _repository.AddRecord(record);
     }
+    public void AddRecordFirst(RecordDTOfrst record)
+    {
+        _repository.AddRecordFirs(record);
+    }
     
 }

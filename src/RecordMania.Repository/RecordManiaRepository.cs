@@ -37,14 +37,31 @@ public class RecordManiaRepository : IRecordManiaRepository
     {
         using var connection = new SqlConnection(_connectionString);
         
-        var command = new SqlCommand("INSERT INTO Records (TaskId, RecordTypeId, TeacherId, ExecutionTime, CreationTime) VALUES (@TaskId, @RecordTypeId, @TeacherId, @ExecutionTime, @CreationTime)", connection);
-        command.Parameters.AddWithValue("@TaskId", record.TaskId);
-        command.Parameters.AddWithValue("@RecordTypeId", record.RecordTypeId);
+        var command = new SqlCommand("INSERT INTO Records (TeacherId,RecordTypeId, TaskId, ExecutionTime, CreationTime) VALUES (@TeacherId,@RecordTypeId,@TaskId, @ExecutionTime, @CreationTime)", connection);
         command.Parameters.AddWithValue("@TeacherId", record.TeacherId);
+        command.Parameters.AddWithValue("@RecordTypeId", record.RecordTypeId);
+        command.Parameters.AddWithValue("@TaskId", record.TaskId);
         command.Parameters.AddWithValue("@ExecutionTime", record.ExecutionTime);
         command.Parameters.AddWithValue("@CreationTime", record.CreationTime);
         
         connection.Open();
         command.ExecuteNonQuery();
     }
+    
+    public void AddRecordFirs(RecordDTOfrst record)
+    {
+        using var connection = new SqlConnection(_connectionString);
+        
+        var command = new SqlCommand("INSERT INTO Records (TeacherId,RecordTypeId, TaskId, ExecutionTime, CreationTime) VALUES (@TeacherId,@RecordTypeId,@TaskId, @ExecutionTime, @CreationTime)", connection);
+        command.Parameters.AddWithValue("@TeacherId", record.TeacherId);
+        command.Parameters.AddWithValue("@RecordTypeId", record.RecordTypeId);
+        command.Parameters.AddWithValue("@TaskId", record.TaskId);
+        command.Parameters.AddWithValue("@ExecutionTime", record.ExecutionTime);
+        command.Parameters.AddWithValue("@CreationTime", record.CreationTime);
+        
+        connection.Open();
+        command.ExecuteNonQuery();
+    }
+    
+    
 }
